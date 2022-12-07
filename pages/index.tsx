@@ -24,7 +24,11 @@ const Home = () => {
   const searchCommunity = async (e: any, q: string) => {
     setQuery(q);
     const newp: any = communities.filter((peo, i) => {
-      return peo.name.includes(q) || peo.pg.includes(q) || peo.tel.includes(q);
+      return (
+        peo.name.toLowerCase().includes(q.toLowerCase()) ||
+        peo.pg.toLowerCase().includes(q.toLowerCase()) ||
+        peo.tel.toLowerCase().includes(q.toLowerCase())
+      );
     });
     setPeople(newp);
   };
@@ -37,9 +41,9 @@ const Home = () => {
           <div className="col-12 col-lg-4 col-xl-4 col-xxl-4 ">
             <div className="card hover:border-green-700 border-slate-100 border-2">
               <div className="card-header bg-gradient-to-b h5 from-[#1e293b] text-white to-black">
-                <h2>Communities:</h2>
+                <h2>Communities</h2>
               </div>
-              <div className="card-body mb-0">
+              <div className="card-body mb-0 pb-0">
                 <div className="mt-0 clear-both">
                   <div className="input-group input-group-md ">
                     <input
@@ -53,12 +57,14 @@ const Home = () => {
                   <em className="float-left text-sm text-gray-600">
                     {query.length ? `search for ${query}` : "search"}
                   </em>
-                  <em className="float-right">...</em>
+                  <em className="float-right">{people.length} Records</em>
                 </div>
               </div>
               {selecedCommunty ? (
-                <div className="w-full min-h-[50px] border py-2">
-                  <div className="container">{selecedCommunty}</div>
+                <div className="container">
+                  <div className="text-white w-full min-h-[50px] border p-2 rounded border-bg-blue-400">
+                    {selecedCommunty}
+                  </div>
                 </div>
               ) : (
                 <></>
@@ -94,14 +100,14 @@ const Home = () => {
               </div>
 
               <div className="card-footer text-right">
-                <h2>{people.length} Records</h2>
+                <h2>{communities.length} Communities</h2>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 ">
             <div className="card hover:border-green-700 border-slate-100 border-2">
               <div className="card-header bg-gradient-to-b h5 from-[#1e293b] text-white to-black">
-                <h2>Appointments:</h2>
+                <h2>Appointments</h2>
               </div>
               <div className="card-body">
                 <h2></h2>
@@ -115,7 +121,7 @@ const Home = () => {
           <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
             <div className="card hover:border-green-700 border-slate-100 border-2">
               <div className="card-header bg-gradient-to-b h5 from-[#1e293b] text-white to-black">
-                <h2>Notifications:</h2>
+                <h2>Notifications</h2>
               </div>
               <div className="card-body">
                 <h2>Ministries</h2>

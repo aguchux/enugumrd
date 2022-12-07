@@ -8,7 +8,7 @@ const BaseLayout = ({ children }: BLProps) => {
       <Head>
         <title>Welcome the MRD Enugu</title>
       </Head>
-      <div className="absolute top-0 left-0 bg-gradient-to-b from-[#1e293b] to-black h-full w-full overflow-hidden">
+      <div className="absolute top-0 left-0 bg-gradient-to-b from-[#576a88] to-black h-full w-full overflow-hidden">
         {children}
       </div>
     </>
