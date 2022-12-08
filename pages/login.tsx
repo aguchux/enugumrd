@@ -1,18 +1,16 @@
-import Link from "next/link";
 import BaseLayout from "../layouts/BaseLayout";
-import { authlogout } from "../utils/withAuthSync";
 
-const home = () => {
+import Busy from "../components/Busy";
+import LoginForm from "../components/LoginForm";
+const login = () => {
   return (
     <BaseLayout>
       <div className="container mt-0 h-screen">
         <div className="row">
-          <Link href="#" onClick={authlogout}>
-            Login
-          </Link>
+          <LoginForm />
         </div>
       </div>
     </BaseLayout>
   );
 };
-export default home;
+export default login;

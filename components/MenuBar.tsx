@@ -1,33 +1,37 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Worker from "./Worker";
+import { Dispatch } from "../store";
+import { useDispatch } from "react-redux";
 const MenuBar = () => {
+  const dispatch = useDispatch<Dispatch>();
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg bg-light bg-gradient-to-t from-[#3c4b62] to-[#5a739b] w-full relative">
         <div className="container">
-          <a className="navbar-brand h4 text-yellow-500 my-0" href={"/"}>
+          <Link className="navbar-brand text-white my-0" href={"/"}>
             <Image
               src={"/enugu.jpg"}
               alt={"Logo"}
               width={35}
               height={35}
-              className="d-inline-block align-text-top"
+              className="d-inline-block align-text-top imaged rounded float-left mr-3 shadow-black"
             />{" "}
-            Rural Development, Enugu
-          </a>
+            <h2 className="h3">Rural Development, Enugu</h2>
+          </Link>
 
           <button
-            className="navbar-toggler"
+            className="navbar-toggler text-white z-50"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            onClick={dispatch.config.toggleSideMenu}
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className="collapse navbar-collapse "
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
@@ -87,7 +91,8 @@ const MenuBar = () => {
             </form>
           </div>
         </div>
-      </nav>
+      </nav>{" "}
+      <Worker />
     </>
   );
 };
