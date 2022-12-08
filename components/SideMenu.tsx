@@ -16,7 +16,7 @@ const SideMenu = () => {
             ? sidemenu
               ? "absolute top-0 left-0 w-[50%] z-10 h-screen"
               : "hidden"
-            : "col-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"
+            : "col-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 h-screen"
         }`}
       >
         <h1 className="h6">
@@ -28,9 +28,17 @@ const SideMenu = () => {
             <li>
               <Link
                 className="text-[#7ba3df] hover:text-[#a4b2c7]"
-                href="/dashboard/"
+                href="/dashboard"
               >
-                My Account
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7ba3df] hover:text-[#a4b2c7]"
+                href="/dashboard/profile"
+              >
+                My Profile
               </Link>
             </li>
             <li>

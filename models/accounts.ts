@@ -10,13 +10,8 @@ const accountsScheme = new mongoose.Schema(
       enum: Object.values(AccountRoles),
       default: AccountRoles.USER,
     },
-    avatar: {
-      type: String,
-      default: "/images/avatar/user.png",
-    },
-    firstname: { type: String },
-    middlename: { type: String },
     lastname: { type: String },
+    firstname: { type: String },
     email: {
       type: String,
       unique: true,

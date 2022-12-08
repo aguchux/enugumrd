@@ -29,7 +29,6 @@ const LoginForm = () => {
     });
     const { status, token } = await res.json();
     if (status) {
-      dispatch.config.setBusy(false);
       authLogin(token);
     }
     dispatch.config.setBusy(false);

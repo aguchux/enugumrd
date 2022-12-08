@@ -14,14 +14,10 @@ export default async function handler(
     POST: async (req: NextApiRequest, res: NextApiResponse) => {
       const { username, password } = req.body;
       const { Accounts } = await dbCon();
-
       // Get the School info with domain //
       const account = await Accounts.findOne({ email: username }).catch(
         catcher
       );
-
-      console.log(Accounts);
-
       if (account) {
         const isPasswordValid = bcrypt.compareSync(password, account.password);
 

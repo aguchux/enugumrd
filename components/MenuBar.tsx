@@ -4,10 +4,26 @@ import Link from "next/link";
 import Worker from "./Worker";
 import { Dispatch } from "../store";
 import { useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
+
 const MenuBar = () => {
   const dispatch = useDispatch<Dispatch>();
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      {/* Same as */}
+      <ToastContainer />
       <nav className="navbar navbar-expand-lg bg-light bg-gradient-to-t from-[#3c4b62] to-[#5a739b] w-full relative">
         <div className="container">
           <Link className="navbar-brand text-white my-0" href={"/"}>

@@ -1,6 +1,6 @@
 import { createModel } from "@rematch/core";
 import { RootModel } from ".";
-import { WebWindow } from "../../interfaces";
+import { WebWindow, Profile } from "../../interfaces";
 
 export const config = createModel<RootModel>()({
   state: {
@@ -8,6 +8,7 @@ export const config = createModel<RootModel>()({
     windows: { width: 0, height: 0, size: "xl" } as WebWindow,
     busy: false,
     worker: true,
+    profile: {} as Profile,
   },
   reducers: {
     setBusy: (state, payload: boolean) => {
@@ -15,6 +16,9 @@ export const config = createModel<RootModel>()({
     },
     setWebWindow: (state, payload: WebWindow) => {
       return { ...state, windows: payload };
+    },
+    setProfile: (state, payload: Profile) => {
+      return { ...state, profile: payload };
     },
     toggleSideMenu: (state) => {
       return { ...state, sidemenu: !state.sidemenu };

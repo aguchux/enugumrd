@@ -46,9 +46,9 @@ const Home = () => {
 
   return (
     <SecureLayout>
-      <div className="container mt-3 h-screen">
-        <div className="row">
-          <div className="col-12 col-lg-4 col-xl-4 col-xxl-4 mb-3">
+      <section>
+        <div className="row mb-3">
+          <div className="col-12">
             <div className="card hover:border-[#ccd2db] border-slate-100 border-2">
               <div className="card-header bg-gradient-to-b h5 from-[#1e293b] text-white to-black">
                 <h2>Communities</h2>
@@ -125,36 +125,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
-            <div className="card hover:border-[#ccd2db] border-slate-100 border-2">
-              <div className="card-header bg-gradient-to-b h5 from-[#1e293b] text-white to-black">
-                <h2>Appointments</h2>
-              </div>
-              <div className="card-body">
-                <h2></h2>
-              </div>
-
-              <div className="card-footer text-right">
-                <h2>0 Records</h2>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-5">
-            <div className="card hover:border-[#ccd2db] border-slate-100 border-2">
-              <div className="card-header bg-gradient-to-b h5 from-[#1e293b] text-white to-black">
-                <h2>Notifications</h2>
-              </div>
-              <div className="card-body">
-                <h2>Ministries</h2>
-              </div>
-
-              <div className="card-footer text-right">
-                <h2>0 Records</h2>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+      </section>
     </SecureLayout>
   );
 };
